@@ -1,12 +1,8 @@
-#if !defined(LINKED_LIST_H)
+#ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-template <typename T>
-struct Node
-{
-    T value;
-    Node<T> *next;
-};
+#include "iterator.h"
+#include "node.h"
 
 template <typename T>
 class LinkedList {
@@ -19,6 +15,8 @@ class LinkedList {
     void remove(int);
     int size();
     void print();
+    Iterator<T> begin();
+    Iterator<T> end();
 
     private:
     int size_count = 0;
